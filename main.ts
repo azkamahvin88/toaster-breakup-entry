@@ -33,7 +33,8 @@ if (ENTRY.length < 1 || ENTRY.length > 280 || !ENTRY.trim()) {
   );
 }
 
-const outDir = process.env.OUTPUT_DIR ?? "/output";
+const outDir =
+  process.env.MAKEFUN_OUTPUT_DIR ?? process.env.OUTPUT_DIR ?? "/output";
 const outFile = join(outDir, "entry.txt");
 
 mkdirSync(outDir, { recursive: true });
